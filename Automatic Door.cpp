@@ -1,12 +1,12 @@
 /*
-Centro Universitário SENAC - Santo Amaro
-Eng de Computação - 3º semestre 2017
-Programação Orientada a Objetos - POO
+Centro UniversitÃ¡rio SENAC - Santo Amaro
+Eng de ComputaÃ§Ã£o - 3Âº semestre 2017
+ProgramaÃ§Ã£o Orientada a Objetos - POO
 
--- Máquina de Estado Finita - Porta Automática --
+-- MÃ¡quina de Estado Finita - Porta AutomÃ¡tica --
 
 Desenvolvido por:
-Rafael Flôr Goto
+Rafael FlÃ´r Goto
 
 */
 #include <iostream>
@@ -23,21 +23,21 @@ protected:
 	int state, person;
 
 public:
-	void print(int value) {									// Função mostra a saída da maquina de estado,
-		std::cout << "State value: " << state << std::endl;		// sendo seu atual estado e a entrada.
+	void print(int value) {								// FunÃ§Ã£o mostra a saÃ­da da maquina de estado,
+		std::cout << "State value: " << state << std::endl;			// sendo seu atual estado e a entrada.
 		std::cout << "Person value: " << value << std::endl;
 	}
 };
 
 class automaticDoor : public stateMachine {
 public:
-	automaticDoor(int value) {									// Construtor da classe automaticDoor onde inicia 
-		state = person = value;									// a mesma com o estado de "porta fechada".
+	automaticDoor(int value) {							// Construtor da classe automaticDoor onde inicia 
+		state = person = value;							// a mesma com o estado de "porta fechada".
 	}
 
-	void opening() {											// As funções a seguir tem a finalidade de definir
-		state = doorOpening;									// cada estado que a porta pode oscilar, que são:
-		std::cout << "The door is opening!" << std::endl;		// Abrindo, Aberta, Fechando e Fechada.
+	void opening() {								// As funÃ§Ãµes a seguir tem a finalidade de definir
+		state = doorOpening;							// cada estado que a porta pode oscilar, que sÃ£o:
+		std::cout << "The door is opening!" << std::endl;			// Abrindo, Aberta, Fechando e Fechada.
 	}
 
 	void open() {
@@ -55,10 +55,10 @@ public:
 		std::cout << "The door is closed!" << std::endl;
 	}
 
-	int checking(int value) {									// A função checking tem a finalidade
-		if (state == doorClosed && value == havePerson) {		// de verificar as possibilidades de entradas  
-			opening();											// que são recebidas e assim definir o para qual 
-			return doorOpening;									// estado a maquina irá.
+	int checking(int value) {							// A funÃ§Ã£o checking tem a finalidade
+		if (state == doorClosed && value == havePerson) {			// de verificar as possibilidades de entradas  
+			opening();							// que sÃ£o recebidas e assim definir o para qual 
+			return doorOpening;						// estado a maquina irÃ¡.
 		}
 
 		if (state == doorOpening && value == havePerson) {
@@ -100,8 +100,8 @@ public:
 	}
 };
 
-int main(void) {												// Main do código onde, irá chamar a classe 
-	int value;													// e colocar ela em um looping
+int main(void) {									// Main do cÃ³digo onde, irÃ¡ chamar a classe 
+	int value;									// e colocar ela em um looping
 
 	automaticDoor ad(0);
 
